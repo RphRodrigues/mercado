@@ -1,22 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mercado/pages/home.dart';
-import 'package:mercado/pages/sobre.dart';
+import 'package:mercado/pages/configuracao.dart';
+import 'pages/home.dart';
+import 'pages/sobre.dart';
 
 void main() => runApp(MercadoApp());
 
 class MercadoApp extends StatelessWidget {
   
-  final routes = <String, WidgetBuilder> {
+  final _routes = <String, WidgetBuilder> {
     HomePage.tag: (context) => HomePage(),
-    SobrePage.tag: (context) => SobrePage()
+    SobrePage.tag: (context) => SobrePage(),
+    ConfiguracaoPage.tag: (context) => ConfiguracaoPage()
   };
   
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Mercado',
+      title: 'MercadoAPP',
       theme: ThemeData(
         primaryColorDark: Colors.red,
         accentColor: Colors.red,
@@ -26,8 +29,9 @@ class MercadoApp extends StatelessWidget {
           body1: TextStyle(fontSize: 14)
         )
       ),
+      
       home: HomePage(),
-      routes: routes
-    );
+      routes: _routes,
+      );
   }
 }
